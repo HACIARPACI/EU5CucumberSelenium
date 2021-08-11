@@ -64,7 +64,7 @@ public class LoginStepDefs {
         BrowserUtils.waitFor(3);
         Assert.assertTrue(Driver.get().getTitle().contains(expectedTitle));
     }
-    @Given("the user logged in as {string}")
+ /*   @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
        if(userType.toLowerCase().equals("sales manager")){
            the_user_enters_the_salesmanager_info();
@@ -73,7 +73,7 @@ public class LoginStepDefs {
        }else{
            the_user_enters_the_driver_info();
        }
-    }
+    }*/
 
 
 }
