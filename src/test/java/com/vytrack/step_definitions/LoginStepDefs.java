@@ -43,8 +43,8 @@ public class LoginStepDefs {
         LoginPage loginPage=new LoginPage();
         loginPage.login(username,password);
     }
-    @When("the user enters the store manager username anmd password")
-    public void the_user_enters_the_storemanager_username_anmd_password() {
+    @When("the user enters the store manager username and password")
+    public void the_user_enters_the_storemanager_username_and_password() {
         String username= ConfigurationReader.get("store_manager_username");
         String password= ConfigurationReader.get("store_manager_password");
 
@@ -63,16 +63,6 @@ public class LoginStepDefs {
         System.out.println("expectedTitle = " + expectedTitle);
         BrowserUtils.waitFor(3);
         Assert.assertTrue(Driver.get().getTitle().contains(expectedTitle));
-    }
-    @Given("the user logged in as {string}")
-    public void the_user_logged_in_as(String userType) {
-       if(userType.toLowerCase().equals("sales manager")){
-           the_user_enters_the_salesmanager_info();
-       }else if(userType.toLowerCase().equals("store manager")){
-           the_user_enters_the_storemanager_username_anmd_password();
-       }else{
-           the_user_enters_the_driver_info();
-       }
     }
 
 
