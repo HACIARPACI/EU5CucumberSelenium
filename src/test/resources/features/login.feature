@@ -1,7 +1,7 @@
 @login @smoke
 Feature: User should be able to login
   Background:  Given the user is on the login page
-  @driver @VYT-123
+  @driver @VYT-123 @haci
   Scenario: Login as driver
     When the user enters the driver info
     Then the user should be able top login
