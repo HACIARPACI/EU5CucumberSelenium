@@ -23,7 +23,7 @@ public class LoginStepDefs {
     public void the_user_enters_the_driver_info() {
        String username= ConfigurationReader.get("driver_username");
        String password= ConfigurationReader.get("driver_password");
-
+        Driver.get().get(ConfigurationReader.get("url"));
         LoginPage loginPage=new LoginPage();
         loginPage.login(username,password);
 
@@ -39,7 +39,7 @@ public class LoginStepDefs {
     public void the_user_enters_the_salesmanager_info() {
         String username= ConfigurationReader.get("sales_manager_username");
         String password= ConfigurationReader.get("sales_manager_password");
-
+        Driver.get().get(ConfigurationReader.get("url"));
         LoginPage loginPage=new LoginPage();
         loginPage.login(username,password);
     }
@@ -47,7 +47,7 @@ public class LoginStepDefs {
     public void the_user_enters_the_storemanager_username_and_password() {
         String username= ConfigurationReader.get("store_manager_username");
         String password= ConfigurationReader.get("store_manager_password");
-
+        Driver.get().get(ConfigurationReader.get("url"));
         LoginPage loginPage=new LoginPage();
         loginPage.login(username,password);
     }
