@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -12,6 +13,7 @@ public class Hooks {
     public void setUp(){
 
         System.out.println("\t  this comes from BEFORE");
+        Driver.get().get(ConfigurationReader.get("url"));
     }
     @After(order = 2)
     public void tearDown(Scenario scenario){
