@@ -14,7 +14,7 @@ Feature: Account Types
         Given the user logged in as "store manager"
         When the user navigates to "Customers" "Contacts"
         Then the title contains "Contacts - Customers"
-
+  @smoke
     Scenario Outline: Login with different accounts
       Given the user logged in as "<usertype>"
       When the user navigates to "<tab>" "<modules>"
