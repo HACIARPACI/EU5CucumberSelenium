@@ -4,7 +4,7 @@ Feature: Account Types
     Given the user logged in as "driver"
     When the user navigates to "Activities" "Calendar Events"
     Then the title contains "Calendar Eventss - Activities"
-  @wip
+  @wips
   Scenario:
     Given the user logged in as "sales manager"
     When the user navigates to "Customers" "Accounts"
