@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 public class ContactInfoPage extends BasePage {
 
-    @FindBy(className = "user-name")
+    @FindBy(xpath = "//div[@class='pull-left']/h1")
     public WebElement contactFullName;
 
     @FindBy(css="a.phone")
