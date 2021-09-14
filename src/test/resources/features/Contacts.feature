@@ -70,7 +70,7 @@ Feature: Contacts Page
     And the user navigates to "Customers" "Contacts"
     When the user clicks the "mike.jorden@hotmail.com" from contacts
     Then the information for "mike.jorden@hotmail.com" should be same with database
-  @wips @db
+
   Scenario Outline: Contacts Test
     Given the user logged in as "sales manager"
     And the user navigates to "Customers" "Contacts"
@@ -81,7 +81,24 @@ Feature: Contacts Page
       |email|
       |mbrackstone9@example.com|
       |mike.jorden@hotmail.com |
+
+   @db
+    Scenario Outline: Activities Calendar Events
+      Given the user logged in as "sales manager"
+      And the user navigates to "Activities" "Calendar Events"
+      When the user clicks the "<title>"
+      Then information for title should be same with database
       
-      
-      
+      Examples:
+      |title|
+      |Meeting|
+
+
+  @wips @db
+  Scenario: Vehicle model UI DB Comparison
+    Given the user is on the login page
+    Given the user logged in as "sales manager"
+    And the user navigates to "Fleet" "Vehicles Model"
+    When the user clicks the "Mazda" from List
+    Then the Vehicle model information should be same with database
       

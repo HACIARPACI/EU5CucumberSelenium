@@ -1,9 +1,6 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.ContactInfoPage;
-import com.vytrack.pages.ContactsPage;
-import com.vytrack.pages.DashboardPage;
-import com.vytrack.pages.LoginPage;
+import com.vytrack.pages.*;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.DBUtils;
@@ -168,6 +165,29 @@ public class ContactsStepDefs {
         Assert.assertEquals(expectedFullName,actualFullName);
         Assert.assertEquals(expectedEmail,actualEmail);
         Assert.assertEquals(expectedPhone,actualPhone);
+
+
+    }
+    @When("the user clicks the {string}")
+    public void the_user_clicks_the(String title) {
+        new ContactsPage().waitUntilLoaderScreenDisappear();
+        new ContactsPage().getTitle(title).click();
+        BrowserUtils.waitFor(3);
+
+    }
+
+    @Then("information for title should be same with database")
+    public void information_for_title_should_be_same_with_database() {
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
+
+        String actualTitle= calendarEventsPage.actualTitle.getText();
+        String actualDescription= calendarEventsPage.actualDescription.getText();
+        String actualStart= calendarEventsPage.actualStart.getText();
+
+        System.out.println("actualTitle = " + actualTitle);
+        System.out.println("actualDescription = " + actualDescription);
+        System.out.println("actualStart = " + actualStart);
 
 
     }
